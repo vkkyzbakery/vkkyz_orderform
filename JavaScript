@@ -1,0 +1,70 @@
+// Handling the form
+const orderForm = document.getElementById('orderForm');
+const previewBtn = document.getElementById('previewOrder');
+const submitBtn = document.getElementById('submitOrder');
+const receiptSection = document.getElementById('receiptSection');
+const receiptContent = document.getElementById('receiptContent');
+
+previewBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    generateReceipt();
+    receiptSection.style.display = 'block';
+});
+
+orderForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const confirmation = confirm('Please confirm your order details are correct before submitting.');
+    if (confirmation) {
+        alert("Thank you for ordering! Your order has been submitted.\n\nDelivery fees vary from ₦1,500 - ₦3,000 depending on your location.\n\nPayment details will be sent to your WhatsApp number.");
+
+        // Reset the form after submission
+        orderForm.reset();
+        receiptSection.style.display = 'none';
+    }
+});
+
+// Generate the receipt content
+function generateReceipt() {
+    const name = document.getElementById('name').value;
+    const contact = document.getElementById('contact').value;
+    const address = document.getElementById('address').value;
+    const deliveryDate = document.getElementById('deliveryDate').value;
+    const deliveryTime = document.getElementById('deliveryTime').value;
+    const cupcakeType = document.getElementById('cupcakeType').value;
+    const cupcakeSize = document.getElementById('cupcakeSize').value;
+    const cupcakeQty = document.getElementById('cupcakeQty').value;
+    const cakeType = document.getElementById('cakeType').value;
+    const cakeSize = document.getElementById('cakeSize').value;
+    const cakeQty = document.getElementById('cakeQty').value;
+    const loafType = document.getElementById('loafType').value;
+    const loafSize = document.getElementById('loafSize').value;
+    const loafQty = document.getElementById('loafQty').value;
+
+    let receiptText = `
+        <h2>Order Receipt</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Contact:</strong> ${contact}</p>
+        <p><strong>Address:</strong> ${address}</p>
+        <p><strong>Preferred Delivery Date & Time:</strong> ${deliveryDate} at ${deliveryTime}</p>
+        <hr>
+        <h3>Cupcake Order:</h3>
+        <p><strong>Flavor:</strong> ${cupcakeType}</p>
+        <p><strong>Size:</strong> ${cupcakeSize}</p>
+        <p><strong>Quantity:</strong> ${cupcakeQty}</p>
+        <hr>
+        <h3>Cake Order:</h3>
+        <p><strong>Flavor:</strong> ${cakeType}</p>
+        <p><strong>Size:</strong> ${cakeSize}</p>
+        <p><strong>Quantity:</strong> ${cakeQty}</p>
+        <hr>
+        <h3>Cake Bread Order:</h3>
+        <p><strong>Flavor:</strong> ${loafType}</p>
+        <p><strong>Size:</strong> ${loafSize}</p>
+        <p><strong>Quantity:</strong> ${loafQty}</p>
+        <br>
+        <p style="color:red;"><strong>Note:</strong> Delivery fee is not included. Payment info will be sent via WhatsApp.</p>
+    `;
+
+    receiptContent.innerHTML = receiptText;
+}
