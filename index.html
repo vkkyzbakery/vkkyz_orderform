@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VKKYZ Bakery Order Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="notice">
+        <p><strong>Note:</strong> Large orders must be placed 2–3 days in advance!</p>
+    </div>
+
+    <div class="container">
+        <img src="your-logo-url-here" class="logo" alt="VKKYZ Logo">
+        
+        <h1>Order Form for VKKYZ Bakery</h1>
+
+        <form id="orderForm">
+            <h2>Customer Information</h2>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="contact" placeholder="WhatsApp Number" required>
+            <input type="text" name="address" placeholder="Delivery Address (Optional)">
+            <input type="date" name="deliveryDate" required>
+            
+            <label>Preferred Delivery Time</label>
+            <select name="deliveryTime" required>
+                <option value="">Select Time</option>
+                <option>9:00 AM</option>
+                <option>9:30 AM</option>
+                <option>10:00 AM</option>
+                <option>10:30 AM</option>
+                <option>11:00 AM</option>
+                <option>11:30 AM</option>
+                <option>12:00 PM</option>
+                <option>12:30 PM</option>
+                <option>1:00 PM</option>
+                <option>1:30 PM</option>
+                <option>2:00 PM</option>
+                <option>2:30 PM</option>
+                <option>3:00 PM</option>
+                <option>3:30 PM</option>
+                <option>4:00 PM</option>
+                <option>4:30 PM</option>
+                <option>5:00 PM</option>
+                <option>5:30 PM</option>
+                <option>6:00 PM</option>
+                <option>6:30 PM</option>
+                <option>7:00 PM</option>
+                <option>7:30 PM</option>
+                <option>8:00 PM</option>
+            </select>
+
+            <h2>Cupcakes</h2>
+            <select name="cupcakeFlavor">
+                <option value="">Select Cupcake Flavor</option>
+                <option>Vanilla Dream</option>
+                <option>Chocolate Bliss</option>
+                <option>Red Velvet Delight</option>
+                <option>Lemon Zest</option>
+                <option>Strawberry Swirl</option>
+            </select>
+            
+            <label>Box Size</label>
+            <select name="boxSize">
+                <option value="">Select Box Size</option>
+                <option>1 Cupcake (₦800)</option>
+                <option>Box of 4 (₦3,000)</option>
+                <option>Box of 6 (₦4,400)</option>
+                <option>Box of 12 (₦8,500)</option>
+            </select>
+            
+            <input type="number" name="cupcakeQuantity" placeholder="Quantity" min="1">
+
+            <h2>Cakes</h2>
+            <select name="cakeType">
+                <option value="">Select Cake Type</option>
+                <option>Classic Vanilla Cake</option>
+                <option>Rich Chocolate Cake</option>
+                <option>Red Velvet Cake</option>
+                <option>Coconut Cream Cake</option>
+                <option>Marble Cake</option>
+                <option>Fruitcake</option>
+            </select>
+
+            <label>Cake Size</label>
+            <select name="cakeSize">
+                <option value="">Select Size</option>
+                <option>6-inch (₦8,000)</option>
+                <option>8-inch (₦13,000)</option>
+                <option>10-inch (₦18,000)</option>
+            </select>
+
+            <input type="number" name="cakeQuantity" placeholder="Cake Quantity" min="1">
+
+            <h2>Loaf Cakes</h2>
+            <select name="loafType">
+                <option value="">Select Loaf Type</option>
+                <option>Banana Bread</option>
+                <option>Chocolate Chip Loaf Cake</option>
+                <option>Vanilla Loaf Cake</option>
+                <option>Coconut Loaf Cake</option>
+            </select>
+
+            <label>Loaf Size</label>
+            <select name="loafSize">
+                <option value="">Select Size</option>
+                <option>Mini Loaf (₦2,500)</option>
+                <option>Regular Loaf (₦4,000)</option>
+            </select>
+
+            <input type="number" name="loafQuantity" placeholder="Loaf Quantity" min="1">
+
+            <br><br>
+            <button type="submit">Preview Order</button>
+        </form>
+
+        <div id="receipt"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
