@@ -1,0 +1,79 @@
+body {
+    background-color: #fdf6e3; /* light cream matching your logo */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 50px auto;
+    padding: 30px;
+    max-width: 700px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    position: relative;
+}
+
+.notice {
+    background-color: #fff3cd;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #ffeeba;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 120px;
+    opacity: 0.3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #6d4c41;
+    z-index: 1;
+    position: relative;
+}
+
+form {
+    z-index: 1;
+    position: relative;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d3c4b3;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    background-color: #d6a67a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #b3875b;
+}
+
+#receipt {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff8f0;
+    border: 1px solid #d3c4b3;
+    border-radius: 10px;
+}
