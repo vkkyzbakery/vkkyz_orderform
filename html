@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form - DAWL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="watermark"></div>
+
+    <div class="container">
+        <img src="your-logo.jpeg" alt="Logo" class="logo">
+
+        <div class="notice">
+            <h2>Notice</h2>
+            <p>Large orders should be placed 2–3 days in advance.</p>
+        </div>
+
+        <form id="orderForm">
+            <h1>Place Your Order</h1>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="contact">WhatsApp Number:</label>
+            <input type="tel" id="contact" required>
+
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" rows="3" required></textarea>
+
+            <label for="deliveryDate">Preferred Delivery Date:</label>
+            <input type="date" id="deliveryDate" required>
+
+            <label for="deliveryTime">Preferred Delivery Time:</label>
+            <select id="deliveryTime" required>
+                <option value="">Select a time</option>
+                <option>9:00 AM</option>
+                <option>9:30 AM</option>
+                <option>10:00 AM</option>
+                <option>10:30 AM</option>
+                <option>11:00 AM</option>
+                <option>11:30 AM</option>
+                <option>12:00 PM</option>
+                <option>12:30 PM</option>
+                <option>1:00 PM</option>
+                <option>1:30 PM</option>
+                <option>2:00 PM</option>
+                <option>2:30 PM</option>
+                <option>3:00 PM</option>
+                <option>3:30 PM</option>
+                <option>4:00 PM</option>
+                <option>4:30 PM</option>
+                <option>5:00 PM</option>
+                <option>5:30 PM</option>
+                <option>6:00 PM</option>
+                <option>6:30 PM</option>
+                <option>7:00 PM</option>
+                <option>7:30 PM</option>
+                <option>8:00 PM</option>
+            </select>
+
+            <h2>Cupcakes</h2>
+            <div class="options-group">
+                <label>Select Flavors:</label><br>
+                <input type="checkbox" class="cupcake-type" value="Chocolate"> Chocolate<br>
+                <input type="checkbox" class="cupcake-type" value="Vanilla"> Vanilla<br>
+                <input type="checkbox" class="cupcake-type" value="Red Velvet"> Red Velvet<br>
+                <input type="checkbox" class="cupcake-type" value="Lemon"> Lemon<br>
+                <input type="checkbox" class="cupcake-type" value="Cookies & Cream"> Cookies & Cream<br>
+            </div>
+
+            <label for="cupcakeSize">Select Box Size (₦800 each):</label>
+            <select id="cupcakeSize">
+                <option value="">Select Size</option>
+                <option>Single Cupcake - ₦800</option>
+                <option>Box of 4 - ₦3200</option>
+                <option>Box of 6 - ₦4800</option>
+                <option>Box of 12 - ₦9600</option>
+            </select>
+
+            <label for="cupcakeQuantity">Quantity:</label>
+            <input type="number" id="cupcakeQuantity" min="0">
+
+            <h2>Cakes</h2>
+            <label for="cakeType">Cake Type:</label>
+            <select id="cakeType">
+                <option value="">Select Cake</option>
+                <option>Chocolate Cake</option>
+                <option>Vanilla Cake</option>
+                <option>Red Velvet Cake</option>
+                <option>Fruitcake (customization required)</option>
+            </select>
+
+            <label for="cakeSize">Cake Size (₦):</label>
+            <select id="cakeSize">
+                <option value="">Select Size</option>
+                <option>6 inches - ₦10,000</option>
+                <option>8 inches - ₦15,000</option>
+                <option>10 inches - ₦20,000</option>
+            </select>
+
+            <label for="cakeQuantity">Quantity:</label>
+            <input type="number" id="cakeQuantity" min="0">
+
+            <div id="fruitcakeCustomization" style="display:none;">
+                <label for="fruitcakeDetails">Describe your Fruitcake Customization:</label>
+                <textarea id="fruitcakeDetails" rows="3"></textarea>
+            </div>
+
+            <h2>Loaf Cakes</h2>
+            <label for="loafType">Loaf Type:</label>
+            <select id="loafType">
+                <option value="">Select Loaf Cake</option>
+                <option>Banana Bread</option>
+                <option>Chocolate Loaf</option>
+                <option>Carrot Loaf</option>
+            </select>
+
+            <label for="loafSize">Loaf Size (₦):</label>
+            <select id="loafSize">
+                <option value="">Select Size</option>
+                <option>Small - ₦2,500</option>
+                <option>Large - ₦4,000</option>
+            </select>
+
+            <label for="loafQuantity">Quantity:</label>
+            <input type="number" id="loafQuantity" min="0">
+
+            <div class="buttons">
+                <button type="button" id="previewBtn">Preview Order</button>
+                <button type="submit">Submit Order</button>
+            </div>
+        </form>
+
+        <div id="receipt" class="receipt"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById('cakeType').addEventListener('change', function() {
+            const customization = document.getElementById('fruitcakeCustomization');
+            if (this.value === 'Fruitcake (customization required)') {
+                customization.style.display = 'block';
+                document.getElementById('fruitcakeDetails').required = true;
+            } else {
+                customization.style.display = 'none';
+                document.getElementById('fruitcakeDetails').required = false;
+            }
+        });
+    </script>
+</body>
+</html>
